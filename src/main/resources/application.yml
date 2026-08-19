@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: minishop
+  datasource:
+    url: jdbc:postgresql://localhost:5432/minishop
+    username: minishop
+    password: minishop
+  jpa:
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  sql:
+    init:
+      mode: always
+
+server:
+  port: 8080
