@@ -1,0 +1,20 @@
+@baseUrl = http://localhost:8080/api
+
+### Alle Kategorien
+GET {{baseUrl}}/categories
+
+### Kategorie anlegen
+POST {{baseUrl}}/categories
+Content-Type: application/json
+
+{
+  "name": "Getränke"
+}
+
+### Zweite Kategorie anlegen
+POST {{baseUrl}}/categories
+Content-Type: application/json
+
+{
+  "name": "Snacks"
+}
