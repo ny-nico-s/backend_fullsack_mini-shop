@@ -18,3 +18,60 @@ Content-Type: application/json
 {
   "name": "Snacks"
 }
+
+### Alle Produkte
+GET {{baseUrl}}/products
+
+### Produkte einer Kategorie
+GET {{baseUrl}}/products?categoryId=1
+
+### Ein Produkt
+GET {{baseUrl}}/products/1
+
+### Unbekanntes Produkt, erwartet 404
+GET {{baseUrl}}/products/999
+
+### Produkt anlegen
+POST {{baseUrl}}/products
+Content-Type: application/json
+
+{
+  "name": "Apfelsaft 1L",
+  "price": 2.50,
+  "stock": 40,
+  "category": {
+    "id": 1
+  }
+}
+
+### Produkt ändern
+PUT {{baseUrl}}/products/1
+Content-Type: application/json
+
+{
+  "name": "Apfelsaft 1L",
+  "price": 2.90,
+  "stock": 35,
+  "category": {
+    "id": 1
+  }
+}
+
+### Unbekanntes Produkt ändern, erwartet 404
+PUT {{baseUrl}}/products/999
+Content-Type: application/json
+
+{
+  "name": "Gibt es nicht",
+  "price": 1.00,
+  "stock": 1,
+  "category": {
+    "id": 1
+  }
+}
+
+### Produkt löschen, erwartet 204
+DELETE {{baseUrl}}/products/6
+
+### Unbekanntes Produkt löschen, erwartet 404
+DELETE {{baseUrl}}/products/999
